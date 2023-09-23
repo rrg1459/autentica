@@ -1,0 +1,21 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+	<center><h3><%= "Mis Datos"  %></h3></center>
+	<strong>Nombre:</strong>
+	<%= @usuario.nombre %>
+	<%= @usuario.apellido %><br>
+	<strong>Usuario:</strong>
+	<%= @usuario.username %><br>
+	<strong>Correo:</strong><%= @usuario.email %><br>
+	<strong>Ultima vez que entró:</strong>
+	<%= @usuario.last_sign_in_at.try(:strftime, "%m/%d/%Y %I:%M%p") %><br>
+
+	<%= "Desde la ciudad de #{@ciudad} en #{@region}, #{@pais}" %>  
+	<br><br>
+	<table>
+	<tr>
+		<td><%= button_to 'Editar', edit_user_path(current_user.id), method: :get %></td>
+		<td><%= button_to 'Cambiar Clave', cambiar_clave_path(current_user.id), method: :get %></td>
+	</tr>
+	</table>
+</div>

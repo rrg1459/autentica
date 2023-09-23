@@ -1,0 +1,65 @@
+/* Hide default input */
+.togglex {
+	display: none;
+}
+
+/* The container and background */
+.togglex {
+	position: relative;
+	display: inline-block;
+	width: 42px;
+	height: 22px;
+	top: 4px;
+	left: 2px;
+	margin-left: 0px;
+	padding-left: 11px;
+}
+.desliza {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #d8d8da;
+	border: 1px solid #aaa;
+	border-radius: 15px;
+	transition: all 0.4s;
+}
+
+/* The sliding button */
+.desliza:before {
+	position: absolute;
+	content: "";
+	width: 16px;
+	height: 16px;
+	left: 2px;
+	top: 2px;
+	background-color: #9b9b9b;
+	border-radius: 24px;
+	transition: all 0.4s;
+}
+
+/* On checked */
+input:checked + .desliza {
+	background-color: #f3cf10;
+}
+input:checked + .desliza:before {
+	transform: translateX(20px);
+	background-color: #47bc5e;
+}
+/* "OFF" Text */
+.desliza:after {
+	position: absolute;
+	content: "No";
+	top: 2px;
+	right: 2px;
+	color: #000;
+	font-size: 14px;
+}
+
+/* "ON" Text */
+input:checked + .desliza:after {
+	content: "SI";
+	left: 6px;
+}

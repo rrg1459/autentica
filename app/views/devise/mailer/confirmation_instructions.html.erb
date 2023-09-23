@@ -1,0 +1,15 @@
+<p>Bienvenido
+	<%= @resource.nombre %>
+	<%= @resource.apellido %>!
+</p>
+
+	<p>Puede confirmar su cuenta siguiendo el enlace:</p>
+	<p><%= link_to 'Confirmar mi cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>
+	<p><%#= "#{confirmation_url(@resource, confirmation_token: @token)}" %></p>
+	<p><%= "(Si no se activa el enlace, copie y pegue en su navegador preferido(Chrome/Firefox/Opera/Otro) para confirmar su cuenta" %></p>
+
+	<%#= render "devise/shared/noes_spam" %>
+
+
+<%= render "devise/shared/de_interes" %>
+

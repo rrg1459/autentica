@@ -1,0 +1,19 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+	<h4>
+		<u>Nombre:</u>
+		<%= @producto.title %>
+		<br>
+		<br>
+		<u>Descripcion:</u> 
+		<strong>
+			<%= @producto.body %>
+		</strong>
+	</h4>
+	<br>
+	<%= link_to(image_tag(@producto.image.thumb.url, alt: 'Image'), @producto.image.url, target: '_blank') if @producto.image? %>
+	<p>
+
+		<%= link_to 'Ir al listado', productos_path, :class => "btn-sm btn-success" %>
+	</p>
+</div>

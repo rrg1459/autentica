@@ -1,0 +1,7 @@
+development:
+  GOOGLE_CLIENT_ID: "496719638428-j1h4hjo7tu4u40v32ojr9lfps427stag.apps.googleusercontent.com"
+  GOOGLE_CLIENT_SECRET: "ARX0scPtGaJRGaOsq5bnlW2o"
+  SECRET_KEY_BASE: 2ee5ac5ea057af206f417c87446a663f101308b124484fe2b4c310010a32b959b23ad54623237fd27121ef31e5f7bb19314bd8807613b85ef38a2be962bef8e6
+
+
+production:

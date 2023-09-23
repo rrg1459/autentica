@@ -1,0 +1,37 @@
+<div class="col-lg-5 well">
+
+<table>
+	<tr>
+		<td><h2>Entrar</h2></td>
+		<td style="padding-bottom: 0px;"><h4 style="margin-bottom: 0px;"></h4></td>
+	</tr>
+</table>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+	<% if resource.errors.any? %>
+		<%= render 'parciales/error_message', error_message: resource.errors.first[1] %>
+	<% end %>
+	<div class="field">
+		<%= f.label :login, 'Usuario o Correo', class: "login" %>
+		<%= f.text_field :login, class: "form-control", style: "width:190px", placeholder: "- - - -" %>
+	</div>
+	<div class="field">
+		<%= f.label :login, 'Contraseña', class: "login" %>
+		<%= f.password_field :password, class: "form-control", style: "width:190px", autocomplete: "off", placeholder: "* * * * * *" %>
+	</div>
+
+	<% if devise_mapping.rememberable? -%>
+		<div class="field">
+			<%= f.check_box :remember_me %>
+			<%= "Recuerdame" %>
+		</div>
+	<% end -%>
+	<br>
+	<div class="actions">
+		<%= f.submit "Entrar", class: 'btn btn-primary' %>
+	</div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+	</div>

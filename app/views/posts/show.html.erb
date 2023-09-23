@@ -1,0 +1,37 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+	<h4>
+		Nombre:
+		<strong>
+			<%= @post.title %>
+		</strong>
+		<br>
+		<br>
+		Descripcion:
+		<strong>
+			<%= @post.body %>
+		</strong>
+		<br>
+		<br>
+		<%= number_to_currency(@post.precio.to_f/100, :unit => "USD ", :separator => ",", :delimiter => ".") %>
+		<br>
+		<br>
+		Existencia:
+		<%= @post.existencia %>
+		<%= (@post.existencia == 1) ? 'unidad' : 'unidades' %>
+		<br>
+		<br>
+		<strong>
+		<i>
+			<%= @post.publicado ? 'Está publicada' : 'No publicada' %>
+		</i>
+		</strong>
+	</h4>
+	<br>
+	<%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+	<p>
+		<%= link_to 'Edita este producto', edit_post_path(@post), :class => "btn-sm btn-primary" %>
+		&nbsp;&nbsp;&nbsp;
+		<%= link_to 'Ir al listado', posts_path, :class => "btn-sm btn-success" %>
+	</p>
+</div>

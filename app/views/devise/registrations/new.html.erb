@@ -1,0 +1,46 @@
+<div class="col-lg-5 well">
+<table>
+	<tr>
+		<td><h2>Crear Cuenta</h2></td>
+		<td style="padding-bottom: 0px;"><h4 style="margin-bottom: 0px;"></h4></td>
+	</tr>
+</table>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+	<% if resource.errors.any? %>
+		<%= render 'parciales/error_message', error_message: resource.errors.first[1] %>
+	<% end %>
+	<div class="form-group">
+		<%= f.label :login, 'Nombre', class: "login" %>
+		<%= f.text_field :nombre, class: "form-control", style: "width:190px", placeholder: "- - - -", autofocus: true %>
+	</div>
+	<div class="form-group">
+		<%= f.label :login, 'Apellido', class: "login" %>
+		<%= f.text_field :apellido, class: "form-control", style: "width:190px", placeholder: "- - - -" %>
+	</div>
+	<div class="field">
+		<%= f.label :login, 'Usuario', class: "login" %>
+		<%= f.text_field :username, class: "form-control", style: "width:190px", placeholder: "- - - -" %>
+	</div>
+	<div class="field">
+		<%= f.label :login, 'Correo', class: "login" %>
+		<%= f.email_field :email, class: "form-control", style: "width:190px", placeholder: "nombre@dominio" %>
+	</div>
+
+	<div class="field">
+		<%= f.label :login, 'Contraseña', class: "login" %>
+		<% if @minimum_password_length %>
+		<em>(<%= @minimum_password_length %> caracteres mínimo)</em>
+		<% end %><br />
+		<%= f.password_field :password, class: "form-control", style: "width:190px", autocomplete: "off", placeholder: "* * * * * *" %>
+	</div>
+
+	<br>
+	<div class="actions">
+		<%= f.submit "Crear", class: 'btn btn-primary' %>
+	</div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

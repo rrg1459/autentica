@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Autenticacion google</title>
+
+		<%#= favicon_link_tag '' %>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body class="pantalla_fondo">
+
+		<%= render 'parciales/navbar' %>
+
+		<% unless notice.blank? %>
+			<div class="alert alert-info alert-dismissable alert-fixed altura">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<%= notice.html_safe %>
+			</div>
+		<% end %>
+
+		<% unless alert.blank? %>
+			<div class="alert alert-danger alert-dismissable alert-fixed altura">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<%= alert.html_safe %>
+			</div>
+		<% end %>
+	 
+		<div class="container">
+		<div align="right" class="texto-fondo">
+			Tepuy Kukenán<br>
+			Parque Canaima
+		</div>
+			<%= yield %>
+		</div>
+
+	</body>
+</html>

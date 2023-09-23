@@ -1,0 +1,22 @@
+// Place all the styles related to the entrada controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.letra_blanca {
+	color: white;
+}
+
+.borde {
+	border-radius: 5px;
+	border: 2px solid #d8d8da;
+}
+
+.una-linea {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.altura {
+  top: 1.2rem !important;
+}

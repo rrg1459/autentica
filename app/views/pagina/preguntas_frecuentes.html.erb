@@ -1,0 +1,43 @@
+<center><h3>Preguntas Frecuentes</h3></center>
+
+<button class="accordion">¿Es Ruby el mejor lenguaje para trabajar?</button>
+<div class="panel">
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</div>
+
+<button class="accordion">¿De que color es el caballo blanco de Simon Bolivar?</button>
+<div class="panel">
+	Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+</div>
+
+<button class="accordion">¿Cuantos planetas tiene el sistema solar?</button>
+<div class="panel">
+	Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.
+</div>
+
+<button class="accordion">¿Cual es el primer mes?</button>
+<div class="panel">
+	Quis nostrud exercitation ullamco laboris nisi ut aliquip ex.
+</div>
+
+<button class="accordion">¿Cuantos son dos mas dos?</button>
+<div class="panel">
+	Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et..
+</div>
+
+<script>
+	var acc = document.getElementsByClassName("accordion");
+	var i;
+	for (i = 0; i < acc.length; i++) {
+		acc[i].onclick = function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight){
+				panel.style.maxHeight = null;
+			} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+			} 
+		} 
+	}
+</script>
+

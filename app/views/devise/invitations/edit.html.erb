@@ -1,0 +1,26 @@
+<div class="col-lg-5 well">
+
+    <h4><b>Crear Cuenta por invitación</b></h4>
+        <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => { :method => :put } do |f| %>
+        <%= render 'parciales/error_message', error_message: resource.errors.first[1] if resource.errors.any? %>
+
+        <%= f.hidden_field :invitation_token %>
+        <div class="form-group">
+          <br>
+          <b>Nombre</b><br>
+          <%= f.text_field :nombre, autofocus: true, placeholder: "Nombre" %><br><br>
+          <b>Apellido</b><br>
+          <%= f.text_field :apellido, placeholder: "Apellido" %><br><br>
+          <b>Usuario</b><br>
+          <%= f.text_field :username,  :value => nil, placeholder: "Usuario" %><br><br>
+          <b>Contraseña</b><br>
+          <%= f.password_field :password, placeholder: "Contraseña" %><br><br>
+          <b>Confirmar contraseña</b><br>
+          <%= f.password_field :password_confirmation, placeholder: "Confirmar contraseña" %><br><br>
+          <%= f.submit 'Crear', class: "btn btn-warning" %><br>
+        </div>
+        <% end %>
+        <%- if controller_name != 'sessions' %>
+        <%= link_to "Entrar", new_session_path(resource_name) %><br />
+        <% end -%>
+</div>

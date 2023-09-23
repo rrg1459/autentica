@@ -1,0 +1,20 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+
+<h2>Reenviar instrucciones de confirmación</h2>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+	
+	<%= render 'parciales/error_message', error_message: resource.errors.full_messages.first %>
+
+	<div class="field">
+		<%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Dirección de Correo", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Reenviar", class: "btn btn-primary" %>
+	</div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

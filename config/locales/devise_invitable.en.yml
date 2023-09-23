@@ -1,0 +1,39 @@
+en:
+  devise:
+    failure:
+      invited: "Usted tiene pendiente una invitación, aceptela para crear su cuenta con nosotros"
+    invitations:
+      send_instructions: "An invitation email has been sent to %{email}."
+      invitation_token_invalid: "Esta invitación ya no es válida!"
+      invitation_invalid: "Esta invitación ya no es válida!!!"
+      invalid: "Esta invitación ya no es válida!!"
+      updated: "su contraseña se ha establecido correctamente. Ahora ha iniciado sesión."
+      updated_not_active: "Your password was set successfully."
+      no_invitations_remaining: "No invitations remaining"
+      invitation_removed: "Your invitation was removed."
+      new:
+        header: "Send invitation"
+        submit_button: "Send an invitation"
+      edit:
+        header: "Set your password"
+        submit_button: "Set my password"
+    mailer:
+      invitation_instructions:
+        subject: "Invitación a usar los servicios de Texto YA"
+        hello: "Saludos, %{email}"
+        por_invitacion1: "%{nombre} %{apellido} desde %{ciudad}, %{pais} le están invitando a usar nuestro servicio de Texto YA!!!,"
+        por_invitacion2: "puede aceptar esta invitación a través del siguiente enlace:"
+        someone_invited_you: "Le estamos invitando a usar nuestro servicio de Texto YA!!!, puede aceptar esta invitación a través del siguiente enlace:"
+        presenta: "¿Quienes somos y que ofrecemos?"
+        quienes_somos: "Somos un servicio de chat vía sms desde Venezuela hacia cualquier dispositivo en el mundo(smartphone, tablet o PC), su contacto no tiene que descargar nada, ni pagar nada extra, la comunicación se establece cuando usted manda un primer sms a su contacto en Venezuela, nuestro sistema le asignará a usted un número desatendido que lo enlazará con su contacto."
+        parentesis: "(estos números desatendidos no aceptan ni transmiten llamadas de voz ni de datos)"
+        promo: "Pruebe nuestra promoción por invitación de un pre-carga GRATUITA para usar nuestros servicios de 50 puntos al crear su cuenta."
+        accept: "Aceptar invitación"
+        accept_until: "This invi xxxx tation will be due in %{due_date}."
+        ignore: "Si no quiere aceptar esta invitación, por favor ignore este correo.<br />\nSu cuenta no se creará hasta que acceda al enlace anterior y establezca su contraseña."
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B %d, %Y %I:%M %p"

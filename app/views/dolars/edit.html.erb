@@ -1,0 +1,19 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+
+	<center>
+		<h2>Actualizando el USD</h2>
+		<br>
+		<%= form_for @dolar do |f| %>
+				<div>
+				<h4>
+						<%= f.number_field :cambio, value: number_to_currency(f.object.cambio.to_f/100, delimiter: '', unit: ''), step: :any %>
+				</h4>
+			</div>
+			<br><br>
+			<%= f.submit 'Guardar', :class => 'btn-sm btn-primary' %>
+		<% end %>
+		<br>
+	</center>
+
+</div>

@@ -1,0 +1,17 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+<% if resource.errors.any? %>
+	<%= render 'parciales/error_message', error_message: resource.errors.full_messages.first %>
+<% end %>
+<h2>Olvidé mi contraseña...</h2>
+<h4>(Escriba su correo para recuperar su cuenta)</h4>
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+		<div class="form-group">
+			<%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Dirección de Correo" %>
+		</div>
+		<div class="form-group">
+			<%= f.submit "Resetar Contraseña", class: "btn btn-primary" %>
+		</div>
+		<%= render "devise/shared/links" %>
+	<% end %>
+</div>

@@ -1,0 +1,148 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+@import 'global';
+@import 'pantalla_fondo';
+
+@import "*";
+
+.listado {
+    width: 25%;
+    float: right
+    ;
+    padding: 15px;
+    border: 1px solid red;
+}
+.chatear {
+    width: 75%;
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+}
+
+
+ .si-sincroniza:before { 
+    content: url(asset-path('conexion1.png'));
+}
+
+ .no-sincroniza:before { 
+    content: url(asset-path('conexion-OFFX.png'));
+}
+
+ .no-asignada:before { 
+    content: url(asset-path('no-mobile.png'));
+}
+
+ .pausado:before { 
+    content: url(asset-path('pause-icon.png'));
+}
+
+ .plus:before { 
+    content: url(asset-path('Plus-icon.png'));
+position: relative;
+}
+
+.centrar {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.texto-modulo {
+    font-family: "MV Boli";
+    font-size: 140%;
+}
+
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
+
+.nav > li > a {
+    padding-left:  9px;
+    padding-right: 9px;
+}
+
+.navbar-brand {
+    padding-left:  10px;
+    padding-right: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+.g-sign-in-button {
+  margin: 10px;
+  display: inline-block;
+  width: 167px;
+  height: 36px;
+  background-color: #4285f4;
+  color: #fff;
+  border-radius: 1px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+}
+.g-sign-in-button:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 3px 3px rgba(66,133,244,.3);
+  box-shadow: 0 0 3px 3px rgba(66,133,244,.3);
+}
+.g-sign-in-button:active {
+  background-color: #3367D6;
+  transition: background-color 0.2s;
+}
+.g-sign-in-button .content-wrapper {
+  height: 100%;
+  width: 100%;
+  border: 1px solid transparent;
+}
+.g-sign-in-button img {
+    width: 25px;
+    height: 25px;
+}
+.g-sign-in-button .logo-wrapper {
+   padding: 5px;
+   background:#fff;
+   width: 35px;
+   height: 100%;
+   border-radius: 1px; 
+   display: inline-block;
+}
+.g-sign-in-button .text-containerg {
+    font-family: Roboto,arial,sans-serif;
+    font-weight: 500;
+    letter-spacing: .21px;
+    font-size: 14px;
+    line-height: 36px;
+    vertical-align: top;
+    border: none;
+    text-align: center;
+    width: 90px;
+    margin-left: 6px;
+}
+
+.justificado {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.modal-dialog{
+    position: relative;
+    display: table; /* This is important */ 
+    overflow-y: auto;    
+    overflow-x: auto;
+    width: auto;
+}
+
+.esta_imagen_es_responsive {
+  max-width: 100%;
+  height: auto;
+}

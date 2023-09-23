@@ -1,0 +1,16 @@
+body.pantalla_fondo {
+background:url(asset-path('kukenan.jpg')) 0px 0px;
+background-size:cover; 
+background-size:100% 100%;
+background-repeat:no-repeat;
+background-attachment:fixed;
+height:100%;
+}
+
+/* Bottom right text */
+.texto-fondo {
+  position: absolute;
+  bottom: 8px;
+  right: 64px;
+  color: white;
+}

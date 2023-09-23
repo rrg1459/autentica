@@ -1,0 +1,42 @@
+
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+	<center>
+
+		<h2>Gestión de productos</h2>
+		<h3><%= number_to_currency($dolar, :unit => "USD ", :separator => ",", :delimiter => ".") %></h3>
+		<br>
+		<%= link_to 'Agrega un nuevo producto', new_post_path, :class => "btn-sm btn-primary" %>
+		<br>
+		<br>
+		<table>
+			<tbody>
+				<% @posts.each do |post| %>
+					<tr>
+						<td>
+							<center>
+								<% if post.image.to_s.blank? %>
+									<%= truncate(post.title, length: 10) %>
+								<% else %>
+									<% existe = verifica_imagen(post.image_url) %>
+									<% if existe %>
+										<%= image_tag post.image.small_thumb.url %>
+									<% else %>
+										<%= "<i>imagen borrada<br>por heroku</i>".html_safe %>
+									<% end %>
+								<% end %>
+							</center>
+						</td>
+						<td style="<%= colorea(post.publicado) %>">
+						<%= post.publicado? %><br><br>
+						<%= link_to 'Mostrar', post, :class => "btn-sm btn-success" %><br><br>
+						<%= link_to 'Editar', edit_post_path(post), :class => "btn-sm btn-info" %><br><br>
+						<%= link_to 'Borrar', post, :class => "btn-sm btn-danger", method: :delete, data: { confirm: 'Esta seguro de borrar este producto?' } %>
+							
+						</td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</center>
+	</div>

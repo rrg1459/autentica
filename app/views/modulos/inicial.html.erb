@@ -1,0 +1,13 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-5 well">
+	<center><h3>Texto a PDF</h3></center>
+
+	<div class='justificado'>
+		<p><%= @lorem %></p>
+	</div>
+	<div>
+		<center><h2> 
+		<%= link_to image_tag("pdf.png"), generar_pdf_path('archivo', :format => :pdf),  title: 'Imprimir/Guardar en PDF', 'data-toggle' => 'tooltip', 'data-placement' => 'bottom' %>
+		</h2></center>
+	</div>
+	</div>

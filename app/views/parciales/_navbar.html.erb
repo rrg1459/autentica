@@ -1,0 +1,76 @@
+<nav class="navbar  navbar-inverse  navbar-fixed-top">
+	<% if user_signed_in? %>
+	<ul class="nav navbar-nav">
+		<li>
+			<ul class="nav navbar-nav">
+				<%= render 'parciales/enlinea' %>
+
+				<li class="dropdown">
+					<a class="texto-modulo dropdown-toggle" data-toggle="dropdown" href="#">Módulo</a>
+					<ul class="dropdown-menu" role="menu">
+						<strong><li class="dropdown-header">De interés</li></strong>
+						<li><%= link_to 'FAQ/Preguntas', preguntas_frecuentes_path %></li>
+						<li class="divider"></li>
+						<li><%= link_to 'Listado de productos',  productos_path %></li>
+						<li><%= link_to 'Ver documento para PDF',  documento_path %></li>
+						<li class="divider"></li>
+						<strong><li class="dropdown-header">Gestionar</li></strong>
+						<li><%= link_to 'Productos',  posts_path %></li>
+						<li><%= link_to 'Dolar', edit_dolar_path(current_user.id) %></li>
+						<li><%= link_to 'Mi cuenta',  user_path(current_user.id) %></li>
+						<li><%= link_to 'Usuarios',  user_path(current_user.id) %></li>
+						<li class="divider"></li>
+
+						<li><%= link_to 'Cerrar', destroy_user_session_path, method: :delete, class: 'nav-link' %></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" >
+						usuario: <b><%= current_user.username %></b>
+					</a>
+					<ul class="dropdown-menu" role="menu">
+						<center><strong><class="dropdown-header"><u>Texto 1</u></strong></center>
+						<li>
+							<center><a href="#"><%= "Texto 2" %></a></center>
+						</li>
+					</ul>
+
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown"><span class="btn-xs btn-default glyphicon glyphicon-plus"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li><%= link_to 'Contáctanos', "#" %></li>
+						<li><%= link_to 'Sobre nosotros', "#" %></li>
+						<li><%= link_to 'otro enlace', "#" %></li>
+					</ul>
+				</li>
+			</ul>
+		</li> 
+	</ul> 
+	<% else %>
+		<ul class="nav navbar-nav">
+			<li>
+
+					<li class="dropdown">
+						<a class="texto-modulo dropdown-toggle" data-toggle="dropdown" href="#">Módulo</a>
+						<ul class="dropdown-menu" role="menu">
+							<li><%= link_to 'Listado de productos', productos_path %></li>
+							<li><%= link_to 'FAQ/Preguntas', preguntas_frecuentes_path %></li>
+							<li><%= link_to 'Documento para PDF',  documento_path %></li>
+							<li><%= link_to 'Contáctanos', "#" %></li>
+							<li><%= link_to 'Sobre nosotros', "#" %></li>
+							<li><%= link_to 'otro enlace', "#" %></li>
+						</ul>
+					</li>
+			</li> 
+			<li>
+				<div class="letra_blanca ml-3">
+					<h4><%= number_to_currency($dolar, :unit => "USD ", :separator => ",", :delimiter => ".") %></h4>
+				</div>
+			</li>
+		</ul>
+
+	<% end %> 
+
+</nav>
+<br><br><br>

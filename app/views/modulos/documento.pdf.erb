@@ -1,0 +1,13 @@
+<div class='justificado'>
+	<p><%= @lorem %></p>
+</div>
+<br>
+<center>
+<% f = Time.now %>
+<% fecha = Date.new(f.year,f.month,f.day) %>
+<%= "═──────────────────────────────────────────────────────────────────────────═" %>
+<%= "INFORMACION CONFIDENCIAL" %>
+</center>
+<p align="justify">Este archivo muestra información confidencial entre el usuario <b><%= "#{current_user.nombre}" %></b> y SUSTENTATOR</b>, se copia por solicitud del usuario a este archivo tipo PDF y que desde este momento escapa del control del equipo de SUSTENTATOR, se agradece mantenerlo en un medio seguro y privado.</p>
+<p align="right">Caracas, <%= l fecha, format: :long %></p>
+<p align="right"><b><i>Equipo de Sustentator</i></b></p>

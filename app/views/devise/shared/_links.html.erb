@@ -1,0 +1,30 @@
+<%#= link_to '/auth/google_oauth2', :class => 'reducido google-button' do %>
+  <%# <div class="google-icon-wrapper"> %>
+<%# <div class='g-sign-in-button'> %>
+  <%# <div class=content-wrapper> %>
+  <%# <div class='logo-wrapper'>   %>
+    <%# <img src='https://developers.google.com/identity/images/g-logo.png'> %>
+    <%# </div>   %>
+    <%# <span class='text-containerg'>  %>
+      <%# <span>Entra con Google</span> %>
+    <%# </span> %>
+  <%# </div>   %>
+  <%# </div>   %>
+  <%# </div>   %>
+<%# end %>
+
+<%#= link_to 'Autenticar con Google', '/auth/google_oauth2' %>
+
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Entrar", new_session_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Crear Cuenta", new_registration_path(resource_name) %><br />
+<% end -%>
+
+<%= link_to 'FAQ/Preguntas más frecuentes', preguntas_frecuentes_path %><br />
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Olvidé mi contraseña", new_password_path(resource_name) %><br />
+<% end -%>

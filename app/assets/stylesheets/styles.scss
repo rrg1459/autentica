@@ -1,0 +1,48 @@
+.colorRecibiendo {
+  background-color: #90EE90;
+  border-radius: 5px 0 5px 5px;
+  margin-top: -3px;
+  border-left: 0;
+  border-top-color: transparent;
+  border-right: solid #367d35;
+}
+
+.colorEnviando {
+  background-color: #33cff2;
+  border-radius: 0 5px 5px 5px;
+  margin-top: -3px;
+  border-right: 0;
+  border-top-color: transparent;
+  border-left: solid #2d6bcf;
+} 
+
+.colorSinPuntos {
+  background-color: #848484;
+  border-radius: 5px 0 5px 5px;
+  margin-top: -3px;
+  border-left: 0;
+  border-top-color: transparent;
+  border-right: solid #000000;
+}
+
+relativo {
+  font-size: 11px;
+}
+
+mediano {
+  font-size: 12px;
+}
+
+sms_pendientes {
+  color: red;
+}
+
+a.verTodosSms {
+  color: gray;
+}
+
+a.verTodosSms:hover {
+  text-decoration: none;
+  color: #000000;
+  background-color: #90EE90;
+}

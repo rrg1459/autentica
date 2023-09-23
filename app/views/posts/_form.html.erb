@@ -1,0 +1,63 @@
+<%= form_for post do |f| %>
+	<div>
+		<%= f.label :Nombre %>
+		<%= f.text_field :title, style: 'width: 100%;' %>
+	</div>
+	<br>
+
+	<div>
+		<%= f.label :Descripción %>
+		<%= f.text_area :body, style: 'width: 100%;' %>
+	</div>
+	<br>
+
+	<div>
+		<%= f.label :precio %>
+		<%= f.number_field :precio, value: number_to_currency(f.object.precio.to_f/100, delimiter: '', unit: ''), step: :any %>
+	</div>
+	<br> 
+
+	<div>
+		<%= f.label :existencia %>
+		<%= f.number_field :existencia %>
+	</div>
+	<br>
+
+	<div>
+		<%= f.label :Imagen %>
+		<%= f.file_field :image %>
+	</div>
+ <br>
+ 
+
+	<div>
+		<%= label_tag :publicado do %>
+			¿Publicar?
+			<label class="togglex">
+				<%= f.check_box :publicado %>
+				<span class="desliza"></span>
+			</label>
+		<% end %>
+	</div>
+	<br>
+	<br>
+
+	<% if post.image? %>
+		<%= image_tag post.image.thumb.url %>
+		<div>
+			<%= label_tag :remove_image do %>
+				¿Borrar la imagen?
+				<label class="togglex">
+					<%= f.check_box :remove_image %>
+					<span class="desliza"></span>
+				</label>
+			<% end %>
+		</div>
+	<% end %>
+ <br>
+
+	<%= f.submit 'Guarda el producto', :class => 'btn-sm btn-primary' %>
+	&nbsp;&nbsp;&nbsp;
+	<%= link_to 'Ir al listado', posts_path, :class => "btn btn-success" %>
+<% end %>
+

@@ -1,0 +1,84 @@
+<div class="col-lg-4"></div>
+<div class="col-lg-8 well">
+	<p id="notice"><%= notice %></p>
+	<% s = 's'; s = '' if @total == 1 %>
+	<table style="width:100%">
+		<tr>
+			<th style="text-align: center" ><h3><%= "#{@total} Usuario#{s}" %></h3></th>
+			<th style="text-align: left" ><%= button_to 'Invitar a:', invitar_path, method: :get %></th>
+		</tr>
+	</table>
+
+	<h5><%= "(Ver detalle de usuario/líneas/puntos y ordenar por usuarios/líneas/puntos/actividad)" %></h5>
+	<table>
+		<thead>
+			<tr>
+				<th style="text-align: center"><%= link_to "Usuarios", users_path %></th>
+				<th></th>
+				<th style="text-align: center"><%= link_to "Líneas", index_lineas_path %></th>
+				<th></th>
+				<th style="text-align: center"><%= link_to "ttyUSB", index_lineas_path %></th>
+				<th></th>
+				<th style="text-align: center"><%= link_to "Puntos", index_puntos_path %></th>
+				<th style="text-align: center">Estado</th>
+				<th style="text-align: center"><%= link_to "Actividad", index_actividad_path %></th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @usuarios.each do |usuario| %>
+			<% ultimo_estado(usuario.f_ultima_actividad) %>
+			<% @o246 = nil %>
+			<% @ttyusb = nil %>
+			<% buscar_linea(usuario.linea_id) if usuario.linea_id %>
+			<% @lista = true %>
+			<% @usu   = usuario %>
+			<%= render "estado" %>
+			<% boton = @estado.index('#') %>
+			<tr>
+				<td><%= link_to usuario.username, usuario_path(usuario) %></td>
+			<td></td>
+			<td>
+			<% if @o246 == '2' %>
+				<%= link_to image_tag('digitel.jpg', size: '60x20', :border => 0), linea_path(usuario.linea_id) %>
+			<% elsif @o246 == '4' %>
+				<%= link_to image_tag('movistar.jpg', size: '60x20', :border => 0), linea_path(usuario.linea_id) %>
+			<% elsif @o246 == '6' %>
+				<%= link_to image_tag('movilnet.jpg', size: '60x20', :border => 0), linea_path(usuario.linea_id) %>
+			<% end %>
+			</td>
+			<td></td>
+			<td><%= @ttyusb %></td>
+			<td>
+			</td>
+			<td style="text-align: center"><%= link_to usuario.puntos, usuario_path(usuario) %></td>
+			<% if boton %>
+				<td style="text-align: center"><button class="button colorEnviando text-left" disabled><%= @estado %></button></td>
+			<% else %>
+				<td style="text-align: center"><%= @estado %></td>
+			<% end %>
+			<td style="text-align: center">
+				<% if @estadoT == 'm' %>
+					<%= button_to "#{@tiempo}", nil, :class => "btn-xs en-lima",  title: 'minutos', 'data-toggle' => 'tooltip', method: :get, disabled: true %>
+				<% elsif @estadoT == 'H' %>
+					<%= button_to "#{@tiempo}", nil, :class => "btn-xs en-amarillo",  title: 'horas', 'data-toggle' => 'tooltip', method: :get, disabled: true %>
+				<% elsif @estadoT == 'D' %>
+					<%= button_to "#{@tiempo}", nil, :class => "btn-xs en-rojo",  title: 'días', 'data-toggle' => 'tooltip', method: :get, disabled: true %>
+				<% elsif @estadoT == 'M' %>
+					<%= button_to "#{@tiempo}:#{@dias}", nil, :class => "btn-xs en-gris",  title: 'meses:días', 'data-toggle' => 'tooltip', method: :get, disabled: true %>
+				<% elsif @estadoT == 'A' %>
+					<%= button_to "#{@tiempo}:#{@meses}:#{@dias}", nil, :class => "btn-xs en-negro",  title: 'años:meses:días', 'data-toggle' => 'tooltip', method: :get, disabled: true %>
+				<% else %>
+					<%= button_to "#{@tiempo}", nil, :class => "btn-xs en-blanco",  title: '', 'data-toggle' => 'tooltip', method: :get, disabled: true %>
+				<% end %>
+			</td>
+				<% sms_pendiente_leer_usuario(usuario.id) %>
+				<%if @total > 0 %>
+					<td><sms_pendientes><sup><strong><%= "(#{@total})" %></strong></sup></sms_pendientes></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<br>
+</div>

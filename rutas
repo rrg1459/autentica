@@ -1,0 +1,55 @@
+                  Prefix Verb   URI Pattern                        Controller#Action
+                         GET    /auth/:provider/callback(.:format) sessions#googleAuth
+            auth_failure GET    /auth/failure(.:format)            redirect(301, /)
+           pagina_indice GET    /pagina/indice(.:format)           pagina#indice
+        new_user_session GET    /users/sign_in(.:format)           devise/sessions#new
+            user_session POST   /users/sign_in(.:format)           devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)          devise/sessions#destroy
+       new_user_password GET    /users/password/new(.:format)      devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)     devise/passwords#edit
+           user_password PATCH  /users/password(.:format)          devise/passwords#update
+                         PUT    /users/password(.:format)          devise/passwords#update
+                         POST   /users/password(.:format)          devise/passwords#create
+cancel_user_registration GET    /users/cancel(.:format)            devise_invitable/registrations#cancel
+   new_user_registration GET    /users/sign_up(.:format)           devise_invitable/registrations#new
+  edit_user_registration GET    /users/edit(.:format)              devise_invitable/registrations#edit
+       user_registration PATCH  /users(.:format)                   devise_invitable/registrations#update
+                         PUT    /users(.:format)                   devise_invitable/registrations#update
+                         DELETE /users(.:format)                   devise_invitable/registrations#destroy
+                         POST   /users(.:format)                   devise_invitable/registrations#create
+  accept_user_invitation GET    /users/invitation/accept(.:format) devise/invitations#edit
+  remove_user_invitation GET    /users/invitation/remove(.:format) devise/invitations#destroy
+     new_user_invitation GET    /users/invitation/new(.:format)    devise/invitations#new
+         user_invitation PATCH  /users/invitation(.:format)        devise/invitations#update
+                         PUT    /users/invitation(.:format)        devise/invitations#update
+                         POST   /users/invitation(.:format)        devise/invitations#create
+                   users GET    /users(.:format)                   users#index
+               edit_user GET    /users/:id/edit(.:format)          users#edit
+                    user GET    /users/:id(.:format)               users#show
+                         PATCH  /users/:id(.:format)               users#update
+                         PUT    /users/:id(.:format)               users#update
+                         DELETE /users/:id(.:format)               users#destroy
+                   posts GET    /posts(.:format)                   posts#index
+                         POST   /posts(.:format)                   posts#create
+                new_post GET    /posts/new(.:format)               posts#new
+               edit_post GET    /posts/:id/edit(.:format)          posts#edit
+                    post GET    /posts/:id(.:format)               posts#show
+                         PATCH  /posts/:id(.:format)               posts#update
+                         PUT    /posts/:id(.:format)               posts#update
+                         DELETE /posts/:id(.:format)               posts#destroy
+               productos GET    /productos(.:format)               productos#index
+                         POST   /productos(.:format)               productos#create
+            new_producto GET    /productos/new(.:format)           productos#new
+           edit_producto GET    /productos/:id/edit(.:format)      productos#edit
+                producto GET    /productos/:id(.:format)           productos#show
+                         PATCH  /productos/:id(.:format)           productos#update
+                         PUT    /productos/:id(.:format)           productos#update
+                         DELETE /productos/:id(.:format)           productos#destroy
+                    root GET    /                                  posts#index
+                         GET    /                                  productos#index
+         administradores GET    /administradores(.:format)         posts#index
+               documento GET    /documento(.:format)               modulos#inicial
+    preguntas_frecuentes GET    /preguntas_frecuentes(.:format)    pagina#preguntas_frecuentes
+             generar_pdf GET    /generar_pdf/:texto(.:format)      modulos#generar_pdf
+             nueva_clave PATCH  /nueva_clave/:id(.:format)         users#nueva_clave
+           cambiar_clave GET    /cambiar_clave/:id(.:format)       users#cambiar_clave

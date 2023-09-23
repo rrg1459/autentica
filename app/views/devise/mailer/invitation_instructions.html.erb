@@ -1,0 +1,29 @@
+<p><%= t("devise.mailer.invitation_instructions.hello", email: @resource.email) %></p>
+
+<% if @resource.user_id_que_invita %>
+	<p>
+		<%= t("devise.mailer.invitation_instructions.por_invitacion2", url: root_url) %>
+	</p>
+<% else %>
+	<p><%= t("devise.mailer.invitation_instructions.someone_invited_you", url: root_url) %></p>
+	<p><%= "(Si no se activa el enlace, copie y pegue en su navegador preferido(Chrome/Firefox/Opera/Otro) para procesar su invitación" %></p>
+<% end %>
+
+<p><%= "#{accept_invitation_url(@resource, :invitation_token => @token)}" %></p>
+<p><%= "Si por alguna razón no puede acceder al enlace de la línea de arriba, por facor cópielo y péguelo en su navegador preferido(Chrome/Firefox/Opera/Otro) para procesar su invitación." %></p>
+
+<%= render "devise/shared/noes_spam" %>
+
+<p>
+	<b><%= t("devise.mailer.invitation_instructions.presenta", url: root_url) %></b><br>
+	<%= t("devise.mailer.invitation_instructions.quienes_somos", url: root_url) %><br>
+	<i><%= t("devise.mailer.invitation_instructions.parentesis", url: root_url) %></i>
+</p>
+
+<% if @resource.invitation_due_at %>
+	<p><%= t("devise.mailer.invitation_instructions.accept_until", due_date: l(@resource.invitation_due_at, format: :'devise.mailer.invitation_instructions.accept_until_format')) %></p>
+<% end %>
+
+<p><%= t("devise.mailer.invitation_instructions.ignore").html_safe %></p>
+
+<%= render "devise/shared/de_interes" %>

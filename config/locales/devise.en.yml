@@ -1,0 +1,41 @@
+en:
+  errors:
+    messages:
+      not_found: "no encontrado"
+      already_confirmed: "ya ha sido confirmado"
+      not_locked: "no está bloqueado"
+      taken: "Correo ya existe, por favor intente con otro correo"
+
+  devise:
+    sessions:
+      link: 'Ingresar'
+      signed_in: 'Ha ingresado correctamente.'
+      signed_out: 'Ha salido correctamente.'
+      unauthenticated: 'Debesingresar como usuario registrado antes de continuar.'
+      unconfirmed: 'Debes confirmar '
+      locked: 'Su cuenta está; boqueada.'
+      invalid: 'El usuario y/o la contraseña son incorrectos.'
+      invalid_token: 'Token de autenticaticación incorrecto.'
+      timeout: 'Su sesión ha caducado. Por favor, vuelva a ingresar.'
+      inactive: 'Su cuenta todavia no ha sido activada.'
+    passwords:
+      link: '¿Olvidó su contraseña?'
+      send_instructions: 'En unos minutos recibirá un email con las instrucciones de como redefinir su contraseña.'
+      updated: 'Ha cambiado correctamente su contraseña y se ha iniciado su sesión automáticamente.'
+    confirmations:
+      link: "¿No ha recibido las instrucciones de confirmación?"
+      send_instructions: 'En unos minutos recibirá un email con las instrucciones de como confirmar su cuenta. '
+      confirmed: 'Su cuenta ha sido confirmada correctamente y se ha iniciado su sesión automáticamente.'
+    registrations:
+      link: 'Registrarse'
+      signed_up: 'Se ha registrado correctamente. Se ha enviado una confirmación a su email. Revísalo por favor.'
+      updated: 'Actualizó su cuenta correctamente.'
+      destroyed: 'Ha cancelado su cuenta correctamente.'
+    unlocks:
+      link: "¿No has recibido las instrucciones de desbloqueo?"
+      send_instructions: 'En unos minutos recibirás un email con las instrucciones de como desbloquear tu cuenta.'
+      unlocked: 'Su cuenta ha sido desbloqueada correctamente y se ha iniciado su sesión automáticamente.'
+    mailer:
+      confirmation_instructions: 'Instrucciones de confirmación de tu cuenta'
+      reset_password_instructions: 'Instrucciones para cambiar la contraseña de tu cuenta'
+      unlock_instructions: 'Instrucciones de desbloqueo de tu cuenta'
